@@ -12,11 +12,10 @@ public class Employe {
     protected LocalDate hiredDate;
     protected double base;
     protected double nbHours;
-    protected double brutSalary = base * nbHours;
-    protected double netSalary = brutSalary * 0.8;
 
 
-    public void Employe(int num_employe,int num_secu, String firstname, String name, int echelon, LocalDate birthDate, LocalDate hiredDate, double base, double nbHours)
+
+    public Employe(int num_employe,int num_secu, String firstname, String name, int echelon, LocalDate birthDate, LocalDate hiredDate, double base, double nbHours)
     {
         this.num_employe = num_employe;
         this.num_secu =num_secu;
@@ -30,10 +29,23 @@ public class Employe {
 
     }
     public double getbrutSalary(){
-        return this.brutSalary;
+        return base * nbHours;
     }
     public double getNetSalary(){
-        return this.netSalary;
+        return 0.8 * getbrutSalary();
+    }
+    @Override
+    public String toString() {
+        return "Employe{" +
+                "num_employe=" + num_employe +
+                ", numeroInsee='" + num_secu + '\'' +
+                ", nom_employe='" + name + '\'' +
+                ", echelon=" + echelon +
+                ", dateNaissance=" + birthDate +
+                ", dateEmbauche=" + hiredDate +
+                ", salaire Brut ="+ getbrutSalary()+
+                '}';
+
     }
 
 }

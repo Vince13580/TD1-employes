@@ -9,8 +9,8 @@ public class Technicians extends Employee {
     public Technicians(int id, int idSS, String lastName, String firstName,
                        int echelon, LocalDate birthday, LocalDate hiringDay,
                        double base, double nbHours, int nbProducedUnities,
-                       double unityCommissionRate) {
-        super(id, idSS, lastName, firstName, echelon, birthday, hiringDay, base, nbHours);
+                       double unityCommissionRate,double bonus) {
+        super(id, idSS, lastName, firstName, echelon, birthday, hiringDay, base, nbHours, bonus);
         this.nbProducedUnities = nbProducedUnities;
         this.unityCommissionRate = unityCommissionRate;
     }

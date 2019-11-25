@@ -7,7 +7,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class Enterprise implements Comparator<Employee> {
+public class Enterprise{
     private String name;
     private PriorityQueue<Employee> listEmployee;
 
@@ -35,15 +35,28 @@ public class Enterprise implements Comparator<Employee> {
     public String toString(){
         String enterprise = "Nom : " + getName() + "\n" + "\n";
 
-            enterprise += getListEmployee();
+        for (Employee e: this.listEmployee) {
+            enterprise += e.toString() + "\n";
+
+        }
 
        return enterprise;
     }
-    @Override
-    public int compare(Employee e1, Employee e2){
-        int e1Senority =(int) ChronoUnit.MONTHS.between(e1.getHiringDay(), LocalDate.now());
-        int e2Senority =(int) ChronoUnit.MONTHS.between(e2.getHiringDay(), LocalDate.now());
-        return e1Senority - e2Senority;
+    public void giveBonus(int bonus) {
+            for (Employee e: this.listEmployee){
+                if (bonus <= 0) break;
+                float senority = ChronoUnit.MONTHS.between(e.getHiringDay(), LocalDate.now());
+                if (bonus >= 10 * senority){
+                    e.setBonus(10 * senority);
+                    bonus -= 10* senority;
+                }
+                else {
+                    e.setBonus(bonus);
+                    bonus =0;
+                }
+             }
+        }
+
     }
-}
+
 

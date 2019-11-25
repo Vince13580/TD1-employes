@@ -12,10 +12,11 @@ public class Employee {
     private LocalDate hiringDay;
     private double base;
     private double nbHours;
+    private double bonus;
 
     public Employee(int id, int idSS, String lastName, String firstName,
                     int echelon, LocalDate birthday, LocalDate hiringDay,
-                    double base, double nbHours){
+                    double base, double nbHours, double bonus){
         this.id = id;
         this.idSS = idSS;
         this.lastName = lastName;
@@ -25,6 +26,7 @@ public class Employee {
         this.hiringDay = hiringDay;
         this.base = base;
         this.nbHours = nbHours;
+        this.bonus = bonus;
     }
 
     public int getId() {
@@ -107,6 +109,13 @@ public class Employee {
         return 80 * this.getGrossSalary() / 100;
     }
 
+    public double getBonus() {
+        return bonus;
+    }
+
+    public void setBonus(double bonus) {
+        this.bonus = bonus;
+    }
 
     public String toString(){
         return "Numéro d'employé : " + this.getId() + "\n" +
@@ -119,7 +128,9 @@ public class Employee {
                 "Base : " + this.getBase() + "\n" +
                 "Nombre d'heures : " + this.getNbHours() + "\n" +
                 "Salaire brut : " + this.getGrossSalary() + "\n" +
-                "Salaire net : " + this.getNetSalary() + "\n";
+                "Salaire net : " + this.getNetSalary() + "\n" +
+                "Bonus :"+ this.getBonus() +"\n";
+
     }
 }
 

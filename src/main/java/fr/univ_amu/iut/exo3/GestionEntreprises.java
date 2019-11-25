@@ -1,7 +1,11 @@
 package fr.univ_amu.iut.exo3;
 
+import fr.univ_amu.iut.exo1.Employe;
+
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
 public class GestionEntreprises {
     public static void main(String[] args) {
@@ -25,8 +29,15 @@ public class GestionEntreprises {
                 LocalDate.of(2000, Month.AUGUST, 28),
                 LocalDate.of(2019, Month.NOVEMBER, 14),
                 8, 35, 20, 10);
-        Employee[] listEmployee = {maximeHenry, florianHocquet, laetitiaBourges, atrysLambert};
+        ImplementComparator comparator = new ImplementComparator();
+        PriorityQueue<Employee> listEmployee = new PriorityQueue<>(comparator);
+        listEmployee.add(maximeHenry);
+        listEmployee.add(florianHocquet);
+        listEmployee.add(laetitiaBourges);
+        listEmployee.add(atrysLambert);
+        System.out.println(listEmployee);
         Enterprise myInfoSociety = new Enterprise("myInfoSociety", listEmployee);
         System.out.println(myInfoSociety.toString());
     }
 }
+

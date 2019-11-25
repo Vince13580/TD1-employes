@@ -1,6 +1,6 @@
 package fr.univ_amu.iut.exo3;
 
-import fr.univ_amu.iut.exo1.Employe;
+
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -24,20 +24,20 @@ public class Enterprise implements Comparator<Employee> {
         this.name = name;
     }
 
-    public Employee[] getListEmployee() {
+    public PriorityQueue<Employee> getListEmployee() {
         return listEmployee;
     }
 
-    public void setListEmployee(Employee[] listEmployee) {
+    public void setListEmployee(PriorityQueue<Employee> listEmployee) {
         this.listEmployee = listEmployee;
     }
 
     public String toString(){
         String enterprise = "Nom : " + getName() + "\n" + "\n";
-        for (int i = 0; i < this.listEmployee.size(); ++i){
-            enterprise += getListEmployee()[i].toString() + "\n";
-        }
-        return enterprise;
+
+            enterprise += getListEmployee();
+
+       return enterprise;
     }
     @Override
     public int compare(Employee e1, Employee e2){

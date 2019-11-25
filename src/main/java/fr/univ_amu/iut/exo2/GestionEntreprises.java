@@ -1,20 +1,32 @@
 package fr.univ_amu.iut.exo2;
 
-import fr.univ_amu.iut.exo1.Employe;
-import fr.univ_amu.iut.exo1.Entreprise;
-
 import java.time.LocalDate;
 import java.time.Month;
 
 public class GestionEntreprises {
     public static void main(String[] args) {
-        Entreprise IUT = new Entreprise("IUT");
-        Employe Maxime = new Employe(0, 120 , "Maxime","Laforce", 1 , LocalDate.of(2000, Month.NOVEMBER,5),LocalDate.of(2019, Month.NOVEMBER,14),20.0,80.0);
-        Employe Matteo = new Employe(1, 121 , "Matteo","Cosson", 1 , LocalDate.of(2000, Month.NOVEMBER,5),LocalDate.of(2019, Month.NOVEMBER,14),20.0,80.0);
-        IUT.hire(Maxime);
-        IUT.hire(Matteo);
-        System.out.println(IUT.toString());
-
-        //throw new RuntimeException("Not yet implemented !");
+        Seller maximeHenry = new Seller(1, 10, "HENRY",
+                "Maxime", 3,
+                LocalDate.of(2001, Month.JULY, 22),
+                LocalDate.of(2019, Month.NOVEMBER, 14),
+                10, 40, 40, 10);
+        OrdinaryEmployee florianHocquet = new OrdinaryEmployee(2, 20, "HOCQUET",
+                "Florian", 2,
+                LocalDate.of(2000, Month.NOVEMBER, 3),
+                LocalDate.of(2019, Month.NOVEMBER, 14),
+                8, 35);
+        Technicians laetitiaBourges = new Technicians(3, 30, "BOURGES",
+                "Laetitia", 2,
+                LocalDate.of(1999, Month.OCTOBER, 13),
+                LocalDate.of(2019, Month.NOVEMBER, 14),
+                8, 35, 30, 10);
+        Representative atrysLambert = new Representative(4, 40, "LAMBERT",
+                "Atrys", 1,
+                LocalDate.of(2000, Month.AUGUST, 28),
+                LocalDate.of(2019, Month.NOVEMBER, 14),
+                8, 35, 20, 10);
+        Employee[] listEmployee = {maximeHenry, florianHocquet, laetitiaBourges, atrysLambert};
+        Enterprise myInfoSociety = new Enterprise("myInfoSociety", listEmployee);
+        System.out.println(myInfoSociety.toString());
     }
 }

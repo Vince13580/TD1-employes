@@ -4,7 +4,7 @@ package fr.univ_amu.iut.exo4;
 
 import java.time.LocalDate;
 
-public class Commercials extends Employee {
+public class Commercials extends Employe {
     private double sales;
     private double commissionRate;
     public Commercials(int id, int idSS, String lastName, String firstName,

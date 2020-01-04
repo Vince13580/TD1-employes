@@ -8,11 +8,11 @@ import java.util.PriorityQueue;
 
 public class Enterprise{
     private String name;
-    private PriorityQueue<Employee> listEmployee;
+    private PriorityQueue<Employe> listEmploye;
 
-    public Enterprise(String name, PriorityQueue<Employee> listEmployee){
+    public Enterprise(String name, PriorityQueue<Employe> listEmploye){
         this.name = name;
-        this.listEmployee = listEmployee;
+        this.listEmploye = listEmploye;
     }
 
     public String getName() {
@@ -23,18 +23,18 @@ public class Enterprise{
         this.name = name;
     }
 
-    public PriorityQueue<Employee> getListEmployee() {
-        return listEmployee;
+    public PriorityQueue<Employe> getListEmploye() {
+        return listEmploye;
     }
 
-    public void setListEmployee(PriorityQueue<Employee> listEmployee) {
-        this.listEmployee = listEmployee;
+    public void setListEmploye(PriorityQueue<Employe> listEmploye) {
+        this.listEmploye = listEmploye;
     }
 
     public String toString(){
         String enterprise = "Nom : " + getName() + "\n" + "\n";
 
-        for (Employee e: this.listEmployee) {
+        for (Employe e: this.listEmploye) {
             enterprise += e.toString() + "\n";
 
         }
@@ -42,7 +42,7 @@ public class Enterprise{
        return enterprise;
     }
     public void giveBonus(int bonus) {
-            for (Employee e: this.listEmployee){
+            for (Employe e: this.listEmploye){
                 if (bonus <= 0) break;
                 float senority = ChronoUnit.MONTHS.between(e.getHiringDay(), LocalDate.now());
                 if (bonus >= 10 * senority){

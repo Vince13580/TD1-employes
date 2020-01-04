@@ -2,7 +2,7 @@ package fr.univ_amu.iut.exo4;
 
 import java.time.LocalDate;
 
-public class Technicians extends Employee {
+public class Technicians extends Employe {
     private int nbProducedUnities;
     private double unityCommissionRate;
 

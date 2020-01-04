@@ -7,12 +7,15 @@ import java.util.PriorityQueue;
 
 public class GestionEntreprises {
     public static void main(String[] args) {
+        /**
+         * Création des employés
+         */
         Seller maximeHenry = new Seller(1, 10, "HENRY",
                 "Maxime", 3,
                 LocalDate.of(2001, Month.JULY, 22),
                 LocalDate.of(2004, Month.JUNE, 14),
                 10, 40, 40, 10, 0);
-        OrdinaryEmployee florianHocquet = new OrdinaryEmployee(2, 20, "HOCQUET",
+        OrdinaryEmploye florianHocquet = new OrdinaryEmploye(2, 20, "HOCQUET",
                 "Florian", 2,
                 LocalDate.of(2000, Month.NOVEMBER, 3),
                 LocalDate.of(2019, Month.FEBRUARY, 14),
@@ -22,19 +25,25 @@ public class GestionEntreprises {
                 LocalDate.of(1999, Month.OCTOBER, 13),
                 LocalDate.of(2019, Month.JANUARY, 14),
                 8, 35, 30, 10, 0);
-        Representative atrysLambert = new Representative(4, 40, "LAMBERT",
-                "Atrys", 1,
+        Representative gaëlLejeune = new Representative(4, 40, "LEJEUNE",
+                "Gaël", 1,
                 LocalDate.of(2000, Month.AUGUST, 28),
                 LocalDate.of(2017, Month.NOVEMBER, 14),
                 8, 35, 20, 10,0);
         ImplementComparator comparator = new ImplementComparator();
-        PriorityQueue<Employee> listEmployee = new PriorityQueue<>(comparator);
-        listEmployee.add(maximeHenry);
-        listEmployee.add(florianHocquet);
-        listEmployee.add(laetitiaBourges);
-        listEmployee.add(atrysLambert);
-        System.out.println(listEmployee);
-        Enterprise myInfoSociety = new Enterprise("myInfoSociety", listEmployee);
+        PriorityQueue<Employe> listEmploye = new PriorityQueue<>(comparator);
+        /**
+         * Ajout des employés
+         */
+        listEmploye.add(maximeHenry);
+        listEmploye.add(florianHocquet);
+        listEmploye.add(laetitiaBourges);
+        listEmploye.add(gaëlLejeune);
+        System.out.println(listEmploye);
+        /**
+         * Instanciation de l'entreprise
+         */
+        Enterprise myInfoSociety = new Enterprise("myInfoSociety", listEmploye);
         System.out.println(myInfoSociety.toString());
         myInfoSociety.giveBonus(500);
         System.out.println(myInfoSociety.toString());
@@ -45,7 +54,7 @@ public class GestionEntreprises {
              */
             FileOutputStream fos = new FileOutputStream("C:\\Users\\Vincent\\IdeaProjects\\TD1-employes2\\employés.txt");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            for (Employee e : listEmployee) {
+            for (Employe e : listEmploye) {
                 oos.writeObject(e);
                 System.out.println(e.getLastName()+ " serialisé ");
 
@@ -60,7 +69,7 @@ public class GestionEntreprises {
             ObjectInputStream ofs = new ObjectInputStream(ifs);
 
             while(true) {
-                Employee e = (Employee) ofs.readObject();
+                Employe e = (Employe) ofs.readObject();
                 System.out.println(e.getLastName() + " désérialisé");
 
             }

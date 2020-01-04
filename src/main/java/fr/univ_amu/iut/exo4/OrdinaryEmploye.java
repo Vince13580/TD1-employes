@@ -4,10 +4,10 @@ package fr.univ_amu.iut.exo4;
 
 import java.time.LocalDate;
 
-public class OrdinaryEmployee extends Employee {
-    public OrdinaryEmployee(int id, int idSS, String lastName, String firstName,
-                            int echelon, LocalDate birthday, LocalDate hiringDay,
-                            double base, double nbHours, double bonus) {
+public class OrdinaryEmploye extends Employe {
+    public OrdinaryEmploye(int id, int idSS, String lastName, String firstName,
+                           int echelon, LocalDate birthday, LocalDate hiringDay,
+                           double base, double nbHours, double bonus) {
         super(id, idSS, lastName, firstName, echelon, birthday, hiringDay, base, nbHours, bonus);
     }
 

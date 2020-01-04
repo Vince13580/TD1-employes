@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 
-public class Employee implements Serializable {
+public class Employe implements Serializable {
     private int id;
     private int idSS;
     private String lastName;
@@ -16,9 +16,9 @@ public class Employee implements Serializable {
     private double nbHours;
     private double bonus;
 
-    public Employee(int id, int idSS, String lastName, String firstName,
-                    int echelon, LocalDate birthday, LocalDate hiringDay,
-                    double base, double nbHours, double bonus){
+    public Employe(int id, int idSS, String lastName, String firstName,
+                   int echelon, LocalDate birthday, LocalDate hiringDay,
+                   double base, double nbHours, double bonus){
         this.id = id;
         this.idSS = idSS;
         this.lastName = lastName;

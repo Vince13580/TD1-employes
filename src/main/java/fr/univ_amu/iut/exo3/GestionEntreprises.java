@@ -24,8 +24,8 @@ public class GestionEntreprises {
                 LocalDate.of(1999, Month.OCTOBER, 13),
                 LocalDate.of(2019, Month.JANUARY, 14),
                 8, 35, 30, 10, 0);
-        Representative atrysLambert = new Representative(4, 40, "LAMBERT",
-                "Atrys", 1,
+        Representative gaëlLejeune = new Representative(4, 40, "LEJEUNE",
+                "Gaël", 1,
                 LocalDate.of(2000, Month.AUGUST, 28),
                 LocalDate.of(2017, Month.NOVEMBER, 14),
                 8, 35, 20, 10,0);
@@ -34,7 +34,7 @@ public class GestionEntreprises {
         listEmployee.add(maximeHenry);
         listEmployee.add(florianHocquet);
         listEmployee.add(laetitiaBourges);
-        listEmployee.add(atrysLambert);
+        listEmployee.add(gaëlLejeune);
         System.out.println(listEmployee);
         Enterprise myInfoSociety = new Enterprise("myInfoSociety", listEmployee);
         System.out.println(myInfoSociety.toString());
